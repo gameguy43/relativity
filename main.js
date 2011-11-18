@@ -1,6 +1,6 @@
 var data = {};
-var data_len = 0;
-var data_int_keys = 0;
+var left_key = 0;
+var right_key = 1;
 json_url = 'data.json&callback=?'
 
 //DEBUG
@@ -20,11 +20,11 @@ data = [
         'size': 10,
         'img' : 'http://www.windows2universe.org/earth/images/earth_apollo17.jpg',
     },
-    ];
+];
 
 function get_random_data_key(not_this_one){
     key = Math.floor(Math.random()*1000) % data.length;
-    if(key==not_this_one && data_int_keys.length > 1){
+    if(key==not_this_one){
         return get_random_data_key(not_this_one);
     }
     return key;
@@ -36,7 +36,6 @@ function display_card(data_key, slot){
     title = $('<span class="title">' + data[data_key]['name'] + '</span>');
     slot.append(title);
     img = $('<img src="' + data[data_key]['img'] + '" />');
-    console.log(img);
     slot.append(img);
 }
 
@@ -50,30 +49,40 @@ function show_answer(answer){
     $('#countdown').append(answer);
 }
 
-
-//$(document).ready(function(){$.getJSON(json_url, {}, function(retval){
-$(document).ready(function(){
-    // set up the data
-    //prep_data();
-
-    // choose a random two
-    item1_key = get_random_data_key();
-    item2_key = get_random_data_key(item1_key);
-
-    // display them
-    display_card(item1_key, 'left');
-    display_card(item2_key, 'right');
-
-    //countdown
+function count_down_then_show_answer(){
     $('#countdown').countDown({
         startNumber: 5,
         callBack: function(me) {
-            show_answer(compute_answer(item1_key, item2_key));
+            show_answer(compute_answer(left_key, right_key));
+            $('#next_button').show();
         }
     });
 
-    // compute their relativity
-    setTimeout(function(){}, 1000);
+}
 
+function new_turn(){
+    // choose a random two
+    left_key = right_key;
+    right_key = get_random_data_key(left_key);
+
+    // display them
+    display_card(left_key, 'left');
+    display_card(right_key, 'right');
+
+    // count down and then show answer
+    count_down_then_show_answer();
+}
+
+
+//$(document).ready(function(){$.getJSON(json_url, {}, function(retval){
+$(document).ready(function(){
+    left_key = get_random_data_key();
+    new_turn();
+    $('#next_button').click(function(evt){
+        evt.preventDefault();
+        new_turn();
+        $(evt.target).hide();
+        return false;
+    });
 });
 //});});

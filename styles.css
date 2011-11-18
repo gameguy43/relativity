@@ -21,14 +21,16 @@ h1{
 
 .card_slot{
     border: 1px solid #dedede;
-    margin: 0;
-    padding: 0;
-    width: 240px;
+    margin: auto;
+    padding: 5px;
+    width: 230px;
     display: inline-block;
+    height: 270px;
 }
 
 .card_slot .title{
     display: block;
+    font-size: 1.3em;
 }
 .card_slot img{
     width: 200px;
@@ -48,6 +50,10 @@ h1{
 
 #answer{
     font-size: 2em;
+}
+
+#next_button{
+    display: none;
 }
 
 
