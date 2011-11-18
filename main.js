@@ -58,6 +58,14 @@ $(document).ready(function(){
     display_card(item1_key, 'left');
     display_card(item2_key, 'right');
 
+    //countdown
+    $('#countdown').countDown({
+        startNumber: 10,
+        callBack: function(me) {
+            $(me).text('All done! This is where you give the reward!').css('color','#090');
+        }
+    });
+
     // compute their relativity
     setTimeout(function(){show_answer(compute_answer(item1_key, item2_key))}, 1000);
 
