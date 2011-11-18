@@ -5,9 +5,9 @@ json_url = 'data.json&callback=?'
 
 //DEBUG
 data = {
-    'moon' : 100,
-    'sun' : 1000,
-    'earth' : 400,
+    'Diameter of the Moon' : 100,
+    'Diameter of the Sun' : 1000,
+    'Diameter of Earth' : 400,
     };
 
 function prep_data(){
@@ -29,8 +29,19 @@ function get_random_data_key(not_this_one){
 
 function display_card(data_key, slot){
     slot = $('.card_slot_' + slot);
-    card = data[data_int_keys[data_key]];
+    slot.html(''); //clear the card
+    card = $('<span class="title">' + data_int_keys[data_key] + '</span>')
+//data[data_int_keys[data_key]]
     slot.append(card);
+}
+
+function compute_answer(key1, key2){
+    return data[data_int_keys[key1]] / data[data_int_keys[key2]];
+}
+
+function show_answer(answer){
+    answer = $('<span class="answer">' + answer + '</span>');
+    $('body').append(answer);
 }
 
 
@@ -42,14 +53,13 @@ $(document).ready(function(){
     // choose a random two
     item1_key = get_random_data_key();
     item2_key = get_random_data_key(item1_key);
-    console.log(item1_key);
-    console.log(item2_key);
 
     // display them
     display_card(item1_key, 'left');
     display_card(item2_key, 'right');
 
     // compute their relativity
+    setTimeout(function(){show_answer(compute_answer(item1_key, item2_key))}, 1000);
 
 });
 //});});
