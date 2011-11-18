@@ -1,0 +1,31 @@
+html{
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+
+body{
+    width: 500px;
+    padding: auto;
+    margin: auto;
+}
+
+
+.card_slot_right, .card_slot_left{
+    border: 1px solid #dedede;
+    margin: 0;
+    padding: 0;
+    width: 240px;
+    display: inline-block;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+form {
+    margin: 0;
+    padding: 0;
+}
+

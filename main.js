@@ -29,7 +29,7 @@ function get_random_data_key(not_this_one){
 
 function display_card(data_key, slot){
     slot = $('.card_slot_' + slot);
-    card = $(data[data_int_keys[data_key]]);
+    card = data[data_int_keys[data_key]];
     slot.append(card);
 }
 
