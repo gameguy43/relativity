@@ -8,10 +8,17 @@ body{
     width: 500px;
     padding: auto;
     margin: auto;
+    font-size: 17px;
+    font-family: helvetica;
+    color: #4d4d4d;
+}
+
+h1{
+    color: #696969;
 }
 
 
-.card_slot_right, .card_slot_left{
+.card_slot{
     border: 1px solid #dedede;
     margin: 0;
     padding: 0;
@@ -19,13 +26,42 @@ body{
     display: inline-block;
 }
 
+.card_slot .title{
+    display: block;
+}
+.card_slot img{
+    width: 200px;
+    margin: auto;
+    display: block;
+}
+
+
+#countdown{
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    height: 50px;
+    margin: 20px 0 0 0;
+}
+
+#answer{
+    font-size: 2em;
+}
+
+
 fieldset {
     margin: 0;
     padding: 0;
     border: 0;
+    text-align: center;
 }
 form {
     margin: 0;
     padding: 0;
+}
+form input{
+    font-size: 1.2em;
+    color: #4d4d4d;
 }
 

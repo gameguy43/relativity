@@ -4,23 +4,26 @@ var data_int_keys = 0;
 json_url = 'data.json&callback=?'
 
 //DEBUG
-data = {
-    'Diameter of the Moon' : 100,
-    'Diameter of the Sun' : 1000,
-    'Diameter of Earth' : 400,
-    };
-
-function prep_data(){
-    data_int_keys = new Array();
-    id = 0;
-    for(key in data){
-        data_int_keys[id] = key;
-        id++;
-    }
-}
+data = [
+    {
+        'name': 'Diameter of Earth',
+        'size': 100,
+        'img' : 'http://www.windows2universe.org/earth/images/earth_apollo17.jpg',
+    },
+    {
+        'name': 'Diameter of Sun',
+        'size': 10000,
+        'img' : 'http://www.windows2universe.org/earth/images/earth_apollo17.jpg',
+    },
+    {
+        'name': 'Diameter of Moon',
+        'size': 10,
+        'img' : 'http://www.windows2universe.org/earth/images/earth_apollo17.jpg',
+    },
+    ];
 
 function get_random_data_key(not_this_one){
-    key = Math.floor(Math.random()*1000) % data_int_keys.length;
+    key = Math.floor(Math.random()*1000) % data.length;
     if(key==not_this_one && data_int_keys.length > 1){
         return get_random_data_key(not_this_one);
     }
@@ -28,27 +31,30 @@ function get_random_data_key(not_this_one){
 }
 
 function display_card(data_key, slot){
-    slot = $('.card_slot_' + slot);
+    slot = $('#card_slot_' + slot);
     slot.html(''); //clear the card
-    card = $('<span class="title">' + data_int_keys[data_key] + '</span>')
-//data[data_int_keys[data_key]]
-    slot.append(card);
+    title = $('<span class="title">' + data[data_key]['name'] + '</span>');
+    slot.append(title);
+    img = $('<img src="' + data[data_key]['img'] + '" />');
+    console.log(img);
+    slot.append(img);
 }
 
 function compute_answer(key1, key2){
-    return data[data_int_keys[key1]] / data[data_int_keys[key2]];
+    return data[key1]['size'] / data[key2]['size'];
 }
 
 function show_answer(answer){
-    answer = $('<span class="answer">' + answer + '</span>');
-    $('body').append(answer);
+    answer = $('<span id="answer">' + answer + '</span>');
+    $('#countdown').text('');
+    $('#countdown').append(answer);
 }
 
 
 //$(document).ready(function(){$.getJSON(json_url, {}, function(retval){
 $(document).ready(function(){
     // set up the data
-    prep_data();
+    //prep_data();
 
     // choose a random two
     item1_key = get_random_data_key();
@@ -60,14 +66,14 @@ $(document).ready(function(){
 
     //countdown
     $('#countdown').countDown({
-        startNumber: 10,
+        startNumber: 5,
         callBack: function(me) {
-            $(me).text('All done! This is where you give the reward!').css('color','#090');
+            show_answer(compute_answer(item1_key, item2_key));
         }
     });
 
     // compute their relativity
-    setTimeout(function(){show_answer(compute_answer(item1_key, item2_key))}, 1000);
+    setTimeout(function(){}, 1000);
 
 });
 //});});
