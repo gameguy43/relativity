@@ -1,26 +1,6 @@
-var data = {};
 var left_key = 0;
 var right_key = 1;
 json_url = 'data.json&callback=?'
-
-//DEBUG
-data = [
-    {
-        'name': 'Diameter of Earth',
-        'size': 100,
-        'img' : 'http://www.windows2universe.org/earth/images/earth_apollo17.jpg',
-    },
-    {
-        'name': 'Diameter of Sun',
-        'size': 10000,
-        'img' : 'http://www.windows2universe.org/earth/images/earth_apollo17.jpg',
-    },
-    {
-        'name': 'Diameter of Moon',
-        'size': 10,
-        'img' : 'http://www.windows2universe.org/earth/images/earth_apollo17.jpg',
-    },
-];
 
 function get_random_data_key(not_this_one){
     key = Math.floor(Math.random()*1000) % data.length;
