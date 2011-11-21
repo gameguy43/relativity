@@ -26,6 +26,7 @@ h1{
     width: 230px;
     display: inline-block;
     height: 270px;
+    overflow: hidden;
 }
 
 .card_slot .title{
