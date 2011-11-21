@@ -20,7 +20,9 @@ function display_card(data_key, slot){
 }
 
 function compute_answer(key1, key2){
-    return data[key2]['size'] / data[key1]['size'];
+    smaller = data[key2]['size'] < data[key1]['size'] ? data[key2]['size'] : data[key1]['size'];
+    larger = smaller == data[key2]['size'] ? data[key1]['size'] : data[key2]['size'];
+    return larger / smaller;
 }
 
 function show_answer(answer){
