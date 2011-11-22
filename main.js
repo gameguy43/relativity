@@ -1,3 +1,4 @@
+//data = $.makeArray(data);
 var old_key = 0;
 var new_key = 1;
 var smaller_key = 0;
@@ -5,6 +6,15 @@ var larger_key = 1;
 var old_card = $('');
 var new_card = $('');
 json_url = 'data.json&callback=?'
+preload_images();
+
+function preload_images() {
+    list_of_images = $.map(data, function(){return this['img']});
+    $(list_of_images).each(function(){
+        (new Image()).src = this;
+    });
+}
+
 
 // round to nearest tenth
 function round(num){
@@ -86,12 +96,30 @@ $(document).ready(function(){
     new_card = $('#card_slot_one');
     populate_card(new_key, new_card);
     old_card = $('#card_slot_two');
-    new_turn();
     $('#next_button').click(function(evt){
         evt.preventDefault();
         new_turn();
         $(evt.target).hide();
         return false;
     });
+    $('#start_button').click(function(evt){
+        evt.preventDefault();
+        $('#pre_game').fadeOut(function(){
+            $('#pre_game').hide();
+            $('#during_game').fadeIn(function(){
+                new_turn();
+            });
+        });
+        return false;
+    });
+    $(document).keypress(function(e){
+        next_keys = [32, 13];
+        var code = (e.keyCode ? e.keyCode : e.which);
+        console.log(code);
+        if(next_keys.indexOf(code) != -1){
+            $('#start_button').click();
+        }
+    });
+    
 });
 //});});
