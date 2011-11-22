@@ -16,8 +16,15 @@ body{
 h1{
     color: #696969;
     letter-spacing: .2em;
+    font-size: 3em;
 }
 
+#cards{
+    margin: 0;
+    padding: 0;
+    height: 282px;
+    overflow: hidden;
+}
 
 .card_slot{
     border: 1px solid #dedede;
@@ -27,6 +34,7 @@ h1{
     display: inline-block;
     height: 270px;
     overflow: hidden;
+    vertical-align: top;
 }
 
 .card_slot .title{
@@ -51,6 +59,13 @@ h1{
 
 #answer{
     font-size: 2em;
+    display: block;
+}
+
+#answer_text{
+    font-size: 2em;
+    display: block;
+    font-size: 1.3em;
 }
 
 #next_button{
