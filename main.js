@@ -5,6 +5,7 @@ var smaller_key = 0;
 var larger_key = 1;
 var old_card = $('');
 var new_card = $('');
+var countdown_length = 3;
 json_url = 'data.json&callback=?'
 preload_images();
 
@@ -50,7 +51,7 @@ function show_answer(answer){
 
 function count_down_then_show_answer(){
     $('#countdown').countDown({
-        startNumber: 5,
+        startNumber: countdown_length,
         callBack: function(me) {
             show_answer(compute_answer());
             $('#next_button').show();

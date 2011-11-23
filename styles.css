@@ -2,12 +2,14 @@ html{
     width: 100%;
     display: block;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body{
     width: 500px;
-    padding: auto;
-    margin: auto;
+    padding: 0;
+    margin: 0 auto 0 auto;
     font-size: 17px;
     font-family: helvetica;
     color: #4d4d4d;
@@ -17,6 +19,8 @@ h1{
     color: #696969;
     letter-spacing: .2em;
     font-size: 3em;
+    margin: 0;
+    padding: 0;
 }
 
 #pre_game{}
