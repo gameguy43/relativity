@@ -1,4 +1,4 @@
-var data = [
+var data_planets = [
     {
         'name': 'Diameter of Earth',
         'size': 6378000,
@@ -41,6 +41,8 @@ var data = [
         'img' :
 'http://www.windows2universe.org/uranus/images/uranus_med.jpg',
     },
+];
+var data_other = [
     {
         'name': 'Length of a dachshund',
         'size': .41,
@@ -77,4 +79,6 @@ var data = [
         'img' :
 'http://upload.wikimedia.org/wikipedia/commons/thumb/1/12/PanAmericanHwy.png/220px-PanAmericanHwy.png',
     },
-]
+];
+
+var data_all = data_planets.concat(data_other);

@@ -22,9 +22,20 @@ h1{
     margin: 0;
     padding: 0;
 }
+h2{
+    color: #696969;
+    font-size: 1.25em;
+    margin: 0;
+    padding: 0;
+}
 
-#pre_game{}
-#during_game{display: none;}
+#pre_game{
+    font-size: 2em;
+
+}
+
+#pre_game{margin: 0; padding: 0;}
+#during_game{display: none; margin: 0; padding: 0;}
 
 #cards{
     margin: 0;

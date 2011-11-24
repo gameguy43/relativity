@@ -1,11 +1,13 @@
 //data = $.makeArray(data);
+//var data = data_all;
+var data = data_planets;
 var old_key = 0;
 var new_key = 1;
 var smaller_key = 0;
 var larger_key = 1;
 var old_card = $('');
 var new_card = $('');
-var countdown_length = 3;
+var countdown_length = 5;
 json_url = 'data.json&callback=?'
 preload_images();
 
