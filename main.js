@@ -22,10 +22,23 @@ function round(num){
     return Math.round(num*10)/10;
 }
 
-function get_random_data_key(not_this_one){
+// thanks, http://www.mredkj.com/javascript/nfbasic.html
+function add_commas(nStr){
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+}
+
+function get_random_data_key(not_these_ones){
     key = Math.floor(Math.random()*1000) % data.length;
-    if(key==not_this_one){
-        return get_random_data_key(not_this_one);
+    if($.inArray(key, not_these_ones) != -1){
+        return get_random_data_key(not_these_ones);
     }
     return key;
 }
@@ -39,7 +52,7 @@ function populate_card(data_key, slot){
 }
 
 function compute_answer(){
-    return round(data[larger_key]['size']/data[smaller_key]['size']);
+    return add_commas(round(data[larger_key]['size']/data[smaller_key]['size']));
 }
 
 function show_answer(answer){
@@ -61,8 +74,9 @@ function count_down_then_show_answer(){
 
 function new_turn(){
     // keep the more recent one, and get a new one
+    old_old_key = new_key;
     old_key = new_key;
-    new_key = get_random_data_key(old_key);
+    new_key = get_random_data_key([old_key, old_old_key]);
 
     //swap the card pointers
     var tmp = old_card;
@@ -114,9 +128,9 @@ $(document).ready(function(){
         return false;
     });
     $(document).keypress(function(e){
+        //space and enter
         next_keys = [32, 13];
         var code = (e.keyCode ? e.keyCode : e.which);
-        console.log(code);
         if(next_keys.indexOf(code) != -1){
             $('#start_button').click();
         }
