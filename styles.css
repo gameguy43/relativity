@@ -6,6 +6,14 @@ html{
     padding: 0;
 }
 
+#teaser{
+
+}
+
+#rules, #rules ol{
+    font-size: .8em;
+}
+
 body{
     width: 500px;
     padding: 0;
