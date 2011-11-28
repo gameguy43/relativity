@@ -105,7 +105,7 @@ function new_turn(){
     }
     turn++;
     // keep the more recent one, and get a new one
-    old_old_key = new_key;
+    old_old_key = old_key;
     old_key = new_key;
     new_key = get_random_data_key([old_key, old_old_key]);
 
