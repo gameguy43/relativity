@@ -9,7 +9,7 @@ var data_planets = [
         'name': 'Distance of the International Space Station from Earth',
         'size': 389461.248,
         'img' :
-'',
+'http://chview.nova.org/station/iss-sta2.jpg',
     },
     {
         'name': 'Diameter of Earth',
@@ -124,7 +124,7 @@ var data_other = [
         'name': 'Deepest Point of the Earth\'s Oceans (Mariana Trench)',
         'size': 10924,
         'img' :
-'http://combopicto.blogspot.com/2010/08/mariana-trench.html',
+'http://upload.wikimedia.org/wikipedia/commons/1/1b/Marianatrenchmap.png',
         'level': 3,
     },
     {
