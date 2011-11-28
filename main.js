@@ -8,6 +8,8 @@ var larger_key = 1;
 var old_card = $('');
 var new_card = $('');
 var countdown_length = 5;
+var level = 0;
+var turn = 0;
 json_url = 'data.json&callback=?'
 
 function preload_images() {
@@ -75,7 +77,16 @@ function count_down_then_show_answer(){
     });
 }
 
+function new_level(){
+    level++;
+    alert('Level ' + level + '. Let\'s get it started');
+}
+
 function new_turn(){
+    if(turn%5 == 0){
+        new_level();
+    }
+    turn++;
     // keep the more recent one, and get a new one
     old_old_key = new_key;
     old_key = new_key;
