@@ -1,6 +1,6 @@
 jQuery.fn.countDown = function(settings,to) {
   settings = jQuery.extend({
-    startFontSize: '36px',
+    startFontSize: '100px',
     endFontSize: '12px',
     duration: 1000,
     startNumber: 10,
