@@ -9,7 +9,6 @@ var old_card = $('');
 var new_card = $('');
 var countdown_length = 5;
 json_url = 'data.json&callback=?'
-preload_images();
 
 function preload_images() {
     list_of_images = $.map(data, function(){return this['img']});
@@ -139,6 +138,6 @@ $(document).ready(function(){
             $('#next_button').click();
         }
     });
-    
+    preload_images();
 });
 //});});
