@@ -1,6 +1,6 @@
 //data = $.makeArray(data);
 //var data = data_all;
-var data = data_other;
+var data = data_all;
 var old_key = 0;
 var new_key = 1;
 var smaller_key = 0;
