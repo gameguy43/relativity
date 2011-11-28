@@ -8,8 +8,8 @@ var larger_key = 1;
 var old_card = $('');
 var new_card = $('');
 var countdown_length = 5;
-var level = 0;
-var turn = 0;
+var level = 1;
+var turn = 1;
 json_url = 'data.json&callback=?'
 
 function preload_images() {
@@ -38,12 +38,27 @@ function add_commas(nStr){
     return x1 + x2;
 }
 
-function get_random_data_key(not_these_ones){
-    key = Math.floor(Math.random()*1000) % data.length;
-    if($.inArray(key, not_these_ones) != -1){
-        console.log('collision');
-        console.log(not_these_ones);
-        return get_random_data_key(not_these_ones);
+function get_random_data_key(not_these_ones, must_be_level){
+    //get the list of possible keys
+    possible_keys = [];
+    for(key in data){
+        if($.inArray(key, not_these_ones) == -1 && data[key]['level'] <= level){
+            if(must_be_level){
+                console.log('asdf');
+                if(data[key]['level'] == must_be_level){
+                    possible_keys.push(key);
+                }
+            }
+            else{
+                possible_keys.push(key);
+            }
+        }
+    }
+    console.log(possible_keys);
+    seed = Math.floor(Math.random()*1000)
+    key = possible_keys[seed % possible_keys.length];
+    if(!key){
+        key = 1;
     }
     return key;
 }
@@ -64,7 +79,8 @@ function show_answer(answer){
     answer = $('<span id="answer">' + answer + '</span>');
     answer_text = $('<span id="answer_text">' + data[smaller_key]['name'] + ' in a ' + data[larger_key]['name'] + '</span>');
     $('#countdown').text('');
-    $('#countdown').append(answer); $('#countdown').append(answer_text);
+    $('#countdown').append(answer);
+    //$('#countdown').append(answer_text);
 }
 
 function count_down_then_show_answer(){
@@ -83,7 +99,8 @@ function new_level(){
 }
 
 function new_turn(){
-    if(turn%5 == 0){
+    var new_level_this_turn = turn%5 == 0;
+    if(new_level_this_turn){
         new_level();
     }
     turn++;
