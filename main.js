@@ -1,6 +1,6 @@
 //data = $.makeArray(data);
 //var data = data_all;
-var data = data_planets;
+var data = data_other;
 var old_key = 0;
 var new_key = 1;
 var smaller_key = 0;
@@ -40,6 +40,8 @@ function add_commas(nStr){
 function get_random_data_key(not_these_ones){
     key = Math.floor(Math.random()*1000) % data.length;
     if($.inArray(key, not_these_ones) != -1){
+        console.log('collision');
+        console.log(not_these_ones);
         return get_random_data_key(not_these_ones);
     }
     return key;
@@ -134,7 +136,7 @@ $(document).ready(function(){
         next_keys = [32, 13];
         var code = (e.keyCode ? e.keyCode : e.which);
         if(next_keys.indexOf(code) != -1){
-            $('#start_button').click();
+            $('#next_button').click();
         }
     });
     
