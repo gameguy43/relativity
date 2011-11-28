@@ -44,7 +44,6 @@ function get_random_data_key(not_these_ones, must_be_level){
     for(key in data){
         if($.inArray(key, not_these_ones) == -1 && data[key]['level'] <= level){
             if(must_be_level){
-                console.log('asdf');
                 if(data[key]['level'] == must_be_level){
                     possible_keys.push(key);
                 }
@@ -100,14 +99,16 @@ function new_level(){
 
 function new_turn(){
     var new_level_this_turn = turn%5 == 0;
+    var get_from_level = undefined;
     if(new_level_this_turn){
         new_level();
+        get_from_level = level;
     }
     turn++;
     // keep the more recent one, and get a new one
     old_old_key = old_key;
     old_key = new_key;
-    new_key = get_random_data_key([old_key, old_old_key]);
+    new_key = get_random_data_key([old_key, old_old_key], get_from_level);
 
     //swap the card pointers
     var tmp = old_card;
