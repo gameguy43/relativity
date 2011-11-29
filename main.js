@@ -10,6 +10,8 @@ var new_card = $('');
 var countdown_length = 5;
 var level = 1;
 var turn = 1;
+var idle = true; // true between turns
+var started = false;
 json_url = 'data.json&callback=?'
 
 function preload_images() {
@@ -97,6 +99,14 @@ function new_level(){
     alert('Level ' + level + '. Let\'s get it started');
 }
 
+function new_turn_if_idle(){
+    if(idle){
+        idle = false;
+        new_turn();
+        idle = true;
+    }
+}
+
 function new_turn(){
     var new_level_this_turn = turn%5 == 0;
     var get_from_level = undefined;
@@ -145,16 +155,17 @@ $(document).ready(function(){
     old_card = $('#card_slot_two');
     $('#next_button').click(function(evt){
         evt.preventDefault();
-        new_turn();
+        new_turn_if_idle();
         $(evt.target).hide();
         return false;
     });
     $('#start_button').click(function(evt){
         evt.preventDefault();
+        started = true;
         $('#pre_game').fadeOut(function(){
             $('#pre_game').hide();
             $('#during_game').fadeIn(function(){
-                new_turn();
+                new_turn_if_idle();
             });
         });
         return false;
@@ -164,7 +175,12 @@ $(document).ready(function(){
         next_keys = [32, 13];
         var code = (e.keyCode ? e.keyCode : e.which);
         if(next_keys.indexOf(code) != -1){
-            $('#next_button').click();
+            if(started){
+                $('#next_button').click();
+            }
+            else{
+                $('#start_button').click();
+            }
         }
     });
     preload_images();
