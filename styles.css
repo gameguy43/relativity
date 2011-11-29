@@ -85,8 +85,10 @@ h2{
 }
 
 #answer{
-    font-size: 2em;
+    font-size: 4em;
     display: block;
+    color: black;
+    font-weight: bold;
 }
 
 #answer_text{
