@@ -12,6 +12,7 @@ var level = 1;
 var turn = 1;
 var idle = true; // true between turns
 var started = false;
+var sig_figs = 3;
 json_url = 'data.json&callback=?'
 
 function preload_images() {
@@ -24,7 +25,8 @@ function preload_images() {
 
 // round to nearest tenth
 function round(num){
-    return Math.round(num*10)/10;
+    return parseFloat(num.toPrecision(sig_figs))
+    //return Math.round(num*10)/10;
 }
 
 // thanks, http://www.mredkj.com/javascript/nfbasic.html
