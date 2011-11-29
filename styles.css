@@ -17,7 +17,7 @@ html{
 body{
     width: 500px;
     padding: 0;
-    margin: 0 auto 0 auto;
+    margin: 20px auto 0 auto;
     font-size: 17px;
     font-family: helvetica;
     color: #4d4d4d;
@@ -32,7 +32,7 @@ h1{
 }
 h2{
     color: #696969;
-    font-size: 1.25em;
+    font-size: 1em;
     margin: 0;
     padding: 0;
 }
