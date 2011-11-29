@@ -59,7 +59,7 @@ var data_other = [
         'name': '1 meter',
         'size': 1,
         'img' :
-'http://upload.wikimedia.org/wikipedia/commons/0/03/Metre_pliant_500px.png',
+'https://lh6.googleusercontent.com/-KCSX9QvZJWw/TtUKqR1M5FE/AAAAAAAAANc/yD8om4UA1_0/s0-d/November292011',
         'level': 1,
     },
     /*
@@ -74,21 +74,21 @@ var data_other = [
         'name': 'Length of a Porsche ',
         'size': 4.2,
         'img' :
-'http://www.carsrevolution.com/wp-content/uploads/2011/07/New-Porsche-911-with-Old-One-by-Singer-looks-very-elegant-with-green-appearance.jpg',
+'https://lh4.googleusercontent.com/-X7xdFc9PAGk/TtUKrkfZHBI/AAAAAAAAAMw/FyusJwohPr8/s400/3087741507_c59a6dc4f5_o.jpg',
         'level': 1,
     },
     {
         'name': 'Average human height',
         'size': 1.68,
         'img' :
-'http://gregcarver.com/blog/wp-content/uploads/2011/02/eur-vitruvian_man.jpg',
+'https://lh5.googleusercontent.com/-5gEtozymhm4/TtUKtHpjmrI/AAAAAAAAANA/QaICZoa25A4/s400/4861890322_136909aa62_b.jpg',
         'level': 1,
     },
     {
         'name': 'Height of the Sears Tower',
         'size': 442,
         'img' :
-'http://3.bp.blogspot.com/_zJpnTu57Koc/TT2OAtGBR5I/AAAAAAAAabE/rWbjSRRca1s/s1600/LensImpressions-03-94.jpg',
+'https://lh6.googleusercontent.com/-VFSH5wLgFQA/TtUKtozTVPI/AAAAAAAAANI/3nwyI6gSRs4/s400/sears_tower.jpg',
         'level': 2,
     },
     {
@@ -110,14 +110,14 @@ var data_other = [
         'name': 'Length of the Nile',
         'size': 6650000,
         'img' :
-'http://upload.wikimedia.org/wikipedia/commons/d/de/Nile_River_and_delta_from_orbit.jpg',
+'https://lh6.googleusercontent.com/-pm4lBliG7KU/TtUKu8Zd_FI/AAAAAAAAANQ/KEoOgUCVd-U/s400/Nile_River_and_delta_from_orbit.jpg',
         'level': 2,
     },
     {
         'name': 'Length of Blood Vessels in an Adult Human Body (end-to-end)',
         'size': 161000000,
         'img' :
-'http://www.healthline.com/images/gale/big/gec_01_img0005.jpg',
+'https://lh3.googleusercontent.com/-2ZxbLEiCq6w/TtUKsRexPiI/AAAAAAAAAM4/Xdoi9NhEKU4/s400/4495939991_b964d38e33_o.jpg',
         'level': 3,
     },
     {
