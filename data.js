@@ -9,49 +9,49 @@ var data_planets = [
         'name': 'Distance of the International Space Station from Earth',
         'size': 389461.248,
         'img' :
-'http://chview.nova.org/station/iss-sta2.jpg',
+'https://lh6.googleusercontent.com/-Ah-l8DYh0-M/TtUNHfbr57I/AAAAAAAAANo/EvrcnbQvSTI/s400/iss-sta2.jpg',
     },
     {
         'name': 'Diameter of Earth',
         'size': 6378000,
         'img' :
-'http://www.windows2universe.org/earth/images/earth_apollo17.jpg',
+'https://lh4.googleusercontent.com/-2SQAyRLR7b4/TtU711bJAFI/AAAAAAAAAPU/-rSG1xchhd8/s400/599px-The_Earth_seen_from_Apollo_17.jpg',
     },
     {
         'name': 'Diameter of Mars',
         'size': 3397000,
         'img' :
-'http://1.bp.blogspot.com/-rhiOFYMxBFU/TbrUZrxYADI/AAAAAAAAAz4/ZMsKAPshEeU/s1600/mars.gif',
+'https://lh6.googleusercontent.com/-EXDNKI555JM/TtU71kZSl4I/AAAAAAAAAPQ/ZdemAbfPPZc/s400/600px-Mars_Valles_Marineris.jpg',
     },
     {
         'name': 'Diameter of Mercury',
         'size': 2440000,
         'img' :
-'http://home.honolulu.hawaii.edu/~pine/images/Ganymede.gif',
+'https://lh3.googleusercontent.com/-PdXcnVBI5Ks/TtU72BHhGxI/AAAAAAAAAPc/PI7AyZxuHII/s400/605px-Mercury_in_color_-_Prockter07_centered.jpg',
     },
     {
         'name': 'Diameter of Venus',
         'size': 6051000,
         'img' :
-'http://solarsystemquick.com/images/planet_venus_1.jpg',
+'https://lh4.googleusercontent.com/-yU3CYKwvIHI/TtU75FU0KKI/AAAAAAAAAQI/Wci3jvfFgL0/s400/Venus-real.jpg',
     },
     {
         'name': 'Diameter of Jupiter',
         'size': 71492000,
         'img' :
-'http://www.gearthblog.com/images/images2006/jupiter.jpg',
+'https://lh5.googleusercontent.com/-KPX2HqWCPyQ/TtU72EbwG5I/AAAAAAAAAPg/W6DsGAmQw9k/s400/622px-Jupiter_by_Cassini-Huygens.jpg',
     },
     {
         'name': 'Diameter of Saturn',
         'size': 60268000,
         'img' :
-'http://scienceblogs.com/startswithabang/upload/2009/10/all_the_junk_in_our_solar_syst/saturn_generic_600.jpg',
+'https://lh4.googleusercontent.com/-O_KdcLMyHtc/TtU717hRC7I/AAAAAAAAAPY/VMdNq9A9Iuk/s400/800px-Saturn_during_Equinox.jpg',
     },
     {
         'name': 'Diameter of Uranus',
         'size': 25559000,
         'img' :
-'http://www.windows2universe.org/uranus/images/uranus_med.jpg',
+'https://lh4.googleusercontent.com/-HLsO5RWI0Wc/TtU719P6G7I/AAAAAAAAAP0/jbWftZDiKkI/s400/600px-Uranus2.jpg',
     },
 ];
 var data_other = [
@@ -95,7 +95,7 @@ var data_other = [
         'name': 'Height of Mt. Moosilauke',
         'size': 1464,
         'img' :
-'http://www.dartmouth.edu/~linguist/images/darthikemtmoosilauke.jpg',
+'https://lh3.googleusercontent.com/-UQeEDQ_6iP0/TtU9xsPapwI/AAAAAAAAAQU/BqKrlw-mSoc/s425/ridge-line-in-the-white-mountains.jpg',
         'level': 2,
     },
     /*
@@ -124,14 +124,14 @@ var data_other = [
         'name': 'Deepest Point of the Earth\'s Oceans (Mariana Trench)',
         'size': 10924,
         'img' :
-'http://upload.wikimedia.org/wikipedia/commons/1/1b/Marianatrenchmap.png',
+'https://lh3.googleusercontent.com/-miUdZ49VY7U/TtU7xt9AcII/AAAAAAAAAPE/z60OWjttJyY/s220/currents_hrov_n2_49158.jpg',
         'level': 3,
     },
     {
         'name': 'Total Length of Paved Road in the US',
         'size': 6300000000,
         'img' :
-'http://frjamescoles.files.wordpress.com/2009/12/southwest-desert-road.jpg',
+'https://lh3.googleusercontent.com/-JhmY-ibce-c/TtU74igWzCI/AAAAAAAAAQA/bGSJ_LQaWIY/s400/Picture%2B2.png',
         'level': 3,
     },
 ];
